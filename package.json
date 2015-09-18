@@ -1,0 +1,19 @@
+{
+  "name": "workspace_grunt",
+  "version": "1.0.0",
+  "description": "learning grunt",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vietpn/workspace_grunt.git"
+  },
+  "author": "vietpn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vietpn/workspace_grunt/issues"
+  },
+  "homepage": "https://github.com/vietpn/workspace_grunt"
+}
