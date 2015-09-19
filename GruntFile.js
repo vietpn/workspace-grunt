@@ -8,10 +8,15 @@ module.exports = function(grunt){
 
         // Name of plugin (plugin name without the "grunt-contrib")
         cssmin: {
-            combine: {
-                files: {
-                    'html/css/main.css': ['html/css/content.css', 'html/css/sidebar.css']
-                }
+            // example config css min
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'html/css/',
+                    src: ['*.css', '*.min.css'],
+                    dest: 'html/css/',
+                    ext: '.min.css'
+                }]
             }
         },
         uglify: {
