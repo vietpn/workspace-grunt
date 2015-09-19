@@ -7,8 +7,8 @@ module.exports = function(grunt){
         pkg: grunt.file.readJSON("package.json"),
 
         // Name of plugin (plugin name without the "grunt-contrib")
+        // min css
         cssmin: {
-            // example config css min
             target: {
                 files: [{
                     expand: true,
@@ -19,8 +19,18 @@ module.exports = function(grunt){
                 }]
             }
         },
+        // min js
         uglify: {
+            options: {
+                mangle: false
+            },
             dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'html/js/',
+                    src: ['**/*.js'],
+                    dest: 'js'
+                }],
                 files: {
                     'html/js/toggle.min.js': ['html/js/toggle.js']
                 }
