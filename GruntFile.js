@@ -14,6 +14,15 @@ module.exports = function(grunt){
         },
 
         // Name of plugin (plugin name without the "grunt-contrib")
+        //unused css: generating CSS files containing only those styles used in your project.
+        uncss: {
+            dist: {
+                files: {
+                    'html/css/style.css': ['html/index.html']
+                }
+            }
+        },
+
         // sass
         sass: {
             dist: {
@@ -22,8 +31,6 @@ module.exports = function(grunt){
                 }
             }
         },
-
-
         // concat
         concat: {
             options: {
@@ -76,11 +83,12 @@ module.exports = function(grunt){
 
     // Load the plugin
     grunt.loadNpmTasks('grunt-contrib-watch')
+    grunt.loadNpmTasks('grunt-uncss')
     grunt.loadNpmTasks('grunt-contrib-concat')
     grunt.loadNpmTasks('grunt-contrib-cssmin')
     grunt.loadNpmTasks('grunt-contrib-uglify')
     grunt.loadNpmTasks('grunt-contrib-sass')
 
     // Do the task
-    grunt.registerTask('default', ['watch'])
+    grunt.registerTask('default', ['cssmin', 'uncss'])
 }
