@@ -14,6 +14,19 @@ module.exports = function(grunt){
         },
 
         // Name of plugin (plugin name without the "grunt-contrib")
+
+
+        // less css, convert file less to css
+        less: {
+            development: {
+                options: {
+                    paths: ["less/"]
+                },
+                files: {
+                    "html/css/source.css" : "less/source.less"
+                }
+            }
+        },
         //unused css: generating CSS files containing only those styles used in your project.
         uncss: {
             dist: {
@@ -22,7 +35,6 @@ module.exports = function(grunt){
                 }
             }
         },
-
         // sass
         sass: {
             dist: {
@@ -83,6 +95,7 @@ module.exports = function(grunt){
 
     // Load the plugin
     grunt.loadNpmTasks('grunt-contrib-watch')
+    grunt.loadNpmTasks('grunt-contrib-less')
     grunt.loadNpmTasks('grunt-uncss')
     grunt.loadNpmTasks('grunt-contrib-concat')
     grunt.loadNpmTasks('grunt-contrib-cssmin')
